@@ -8,20 +8,31 @@
 </head>
 <body>
     <h1> Code Challenge PT </h1>
+    <div>Hur länge har du motionerat i dag?</div>
+    <input id="minutes" type="text" placeholder="minuter">
+    <input id="btn-ok" type="button" value="OK" onclick="getPtFeedback()">
+
+
     <script>
         const mintime = 15; 
         const maxtime = 60; 
-        let personaltime = Number(getElementById("number").value);
 
-        if (personaltime < maxtime && personaltime > mintime) {
-            alert("Det är bra men du klarar dig lite till!")
-        } else if (personaltime == maxtime) {
-            alert("Bra jobbat!")
-        } else if (personaltime == mintime) {
-            alert("Du har uppnått minimigränsen! Försök lite till!")
-        } else if (personaltime == 0) {
-            alert("Är du seriös?")
+
+        function getPtFeedback() {
+            console.log("getPtFeedback")
+            const personaltime = Number(document.querySelector("#minutes").value);
+                if (personaltime < maxtime && personaltime > mintime) {
+                    document.querySelector("#PTOutput").innerText = `Det är bra men du klarar dig lite till!`;
+                } else if (personaltime >= maxtime) {
+                    document.querySelector("#PTOutput").innerText = `Bra jobbat!`;
+                } else if (personaltime == mintime) {
+                    document.querySelector("#PTOutput").innerText = `Du har uppnått minimigränsen! Försök lite till!`;
+                } else if (personaltime == 0) {
+                    document.querySelector("#PTOutput").innerText = `Är du seriös?`;
+                }
         }
     </script>
+
+    <div id="PTOutput">Tryck ok!</div>
 </body>
 </html>
