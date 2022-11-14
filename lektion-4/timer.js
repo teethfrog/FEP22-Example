@@ -1,11 +1,16 @@
 console.log("timers.js INIT")
 
-let count = 0;
 const myTimer = setInterval(function (){
-    console.log("Hello", count);
-    count++;
-}, 1000)
+    const justNu = new Date();
+    document.querySelector("#Clock").innerText = `
+Klockan är ${justNu.getHours()}:${justNu.getMinutes()}:${justNu.getSeconds()}
+` 
+}, 1000);
 
 function stopHello3() {
     clearInterval(myTimer);
 }
+
+document.querySelector("#stopHello3").addEventListener('click', function (evt) {
+    stopHello3();
+})
