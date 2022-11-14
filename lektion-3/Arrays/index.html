@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = [ "Kaffe", "Munk", "Glass" ]
+        const prices = [ 3, 3.5, 4 ]
+        const stock = [ 100, 15, 45 ]
+
+        for(let i = 0; i < names.length; i++){
+            console.log(`En ${names[i]} kostar ${prices[i]}, vi har ${stock[i]}st`) 
+        }
+
+        const products = [
+            { name: "Kaffe", price: 3, stock: 100},
+            { name: "Munk", price: 3.5, stock: 15},
+            { name: "Kaffe", price: 4, stock: 45},
+        ]
+        for(let i = 0; i < names.length; i++){
+            console.log(`En ${products[i].name} kostar ${products[i].price}, vi har ${products[i].stock}st`) 
+        }
+    </script>
+</body>
+</html>
