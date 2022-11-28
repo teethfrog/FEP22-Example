@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        const Url = "https://api.open-meteo.com/v1/forecast?latitude=60&longitude=25&current_weather=true&windspeed_unit=ms"
+
+        async function getWeather() {
+            const resp = await fetch(Url);
+            const weatherJSON = await resp.json()
+            console.log(weatherJSON.current_weather.temperature)
+            
+        }
+
+        getWeather();
+    </script>
+</body>
+</html>
