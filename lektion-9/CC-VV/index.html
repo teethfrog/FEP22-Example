@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="out"></div>
 
 
     <script>
@@ -15,7 +16,16 @@
         async function getWeather() {
             const resp = await fetch(Url);
             const weatherJSON = await resp.json()
+            const curWeather = weatherJSON.current_weather;
             console.log(weatherJSON.current_weather.temperature)
+
+            document.getElementById("out").innerHTML = `   
+            Det är ${curWeather.temperature}&deg;C och det blåser ${curWeather.windspeed} m/s.
+            `
+
+            for (key of Object.keys(curWeather)) {
+                console.log(`${key}: ${curWeather[key]}`);
+            }
             
         }
 
